@@ -56,6 +56,7 @@ type nul > tsconfig.json
 
 Is it time for react/redux or eslint/prettier?
 Let start with eslint
+
 ```shell script
 yarn add -D prettier
 type nul > .prettierrc
@@ -68,7 +69,10 @@ yarn add -D @typescript-eslint/eslint-plugin
 type nul > .eslintrc
 ```
 
-
+```shell script
+# Install husky and lint-staged
+yarn add --dev lint-staged husky
+```
 
 ```shell script
 # Install react & redux
