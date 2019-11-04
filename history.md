@@ -37,3 +37,17 @@ git push origin master
 # Add file .travis.yml
 type nul > .travis.yml
 ```
+
+```shell script
+# Install webpack
+yarn add -D webpack webpack-cli webpack-dev-server
+yarn add -D html-webpack-plugin html-loader
+yarn add express
+yarn add -D @types/express
+
+```
+
+```shell script
+# Install react & redux
+
+```
