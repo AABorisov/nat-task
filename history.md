@@ -54,6 +54,21 @@ yarn add -D @types/express
 type nul > tsconfig.json
 ```
 
+Is it time for react/redux or eslint/prettier?
+Let start with eslint
+```shell script
+yarn add -D prettier
+type nul > .prettierrc
+
+npx install-peerdeps --dev eslint-config-airbnb
+yarn add -D eslint-config-prettier
+yarn add -D eslint-plugin-prettier
+yarn add -D @typescript-eslint/parser
+yarn add -D @typescript-eslint/eslint-plugin
+type nul > .eslintrc
+```
+
+
 
 ```shell script
 # Install react & redux
