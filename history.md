@@ -17,10 +17,23 @@ type nul > .editorconfig
 ```
 
 ```shell script
-# if it's required:
-
-# git rm -r --cached .
-
 git add .
+git rm -r --cached .idea
 git commit -m "First commit"
+git remote add origin https://github.com/AABorisov/nat-task.git
+git remote -v
+git push origin master
+```
+
+```shell script
+# travis-ci & Heroku
+# Activate the github-repository into travis-ci
+# Set environment variables HEROKU_SECRET_KEY in the travis-ci settings of project
+# with secure API_KEY from heroku account settings
+# https://dashboard.heroku.com/account
+
+# Create project application in heroku dashboard (nat-task)
+
+# Add file .travis.yml
+type nul > .travis.yml
 ```
