@@ -48,6 +48,14 @@ yarn add -D @types/express
 ```
 
 ```shell script
-# Install react & redux
+# Install typescript
+yarn add -D typescript ts-loader source-map-loader
+yarn add -D @types/express
+type nul > tsconfig.json
+```
 
+
+```shell script
+# Install react & redux
+yarn add react react-dom
 ```

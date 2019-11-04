@@ -2,7 +2,7 @@
   "name": "nat-task",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "scripts": {
     "test": "echo \"Success: no test specified\" && exit 0",
     "dev": "webpack-dev-server --mode development",
@@ -10,11 +10,15 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "AABorisov",
   "license": "ISC",
   "devDependencies": {
+    "@types/express": "^4.17.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
