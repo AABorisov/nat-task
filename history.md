@@ -75,6 +75,28 @@ yarn add --dev lint-staged husky
 ```
 
 ```shell script
+# Install scss
+yarn add -D sass-loader node-sass css-loader style-loader
+yarn add -D mini-css-extract-plugin
+type nul > declaration.d.ts
+yarn add -D clean-webpack-plugin
+```
+
+Usage:
+
+```
+import styles = require('./styles.scss');
+import * as styles3 from './styles.scss';
+// NOT USE:
+// import styles2 from './styles.scss';
+
+const root = document.getElementById('root');
+const para = document.createElement('p');
+para.innerHTML = '<p class= ' + styles.className + '>Hello from root, Natera.</p>';
+root.appendChild(para);
+```
+
+```shell script
 # Install react & redux
 yarn add react react-dom
 ```
