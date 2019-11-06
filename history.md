@@ -99,4 +99,7 @@ root.appendChild(para);
 ```shell script
 # Install react & redux
 yarn add react react-dom
+yarn add -D @types/react @types/react-dom
+yarn add redux react-redux
+yarn add -D @types/react-redux
 ```
