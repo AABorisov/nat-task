@@ -1,0 +1,39 @@
+@import '../../../styles/mixins';
+
+.card {
+  .title {
+    @include set-font('Montserrat', 500, 1.4rem, 1.7rem, #c4c4c4);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+  .important {
+    .icon {
+    }
+    .number {
+      @include set-font('Roboto', bold, 3.2rem, 3.7rem, #484848);
+    }
+  }
+  .content {
+    @include set-font('Montserrat', 500, 1.4rem, 1.7rem, #c4c4c4);
+    mark {
+      color: #6883e4;
+      background-color: transparent;
+    }
+  }
+  .contentArray {
+    padding-top: 0.6rem;
+  }
+  .contentElement {
+    padding: 0.3rem 1.6rem;
+    margin-right: 0.3rem;
+    @include set-font('Roboto', normal, 1.2rem, 1.4rem, #484848);
+    background: rgba(104, 131, 228, 0.2);
+    border-radius: 4.2rem;
+    height: 2rem;
+    cursor: pointer;
+    &:hover {
+      background: rgba(104, 131, 228, 0.5);
+    }
+  }
+}

@@ -1,0 +1,47 @@
+@import '../../styles/mixins';
+
+.posts {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  height: 20rem;
+  min-width: 22.5rem;
+  width: 22.5rem;
+  max-width: 22.5rem;
+
+  background-color: #ffffff;
+  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+
+  padding: 2.1rem;
+}
+
+.postContent {
+  border-bottom: 0.1rem solid #ececec;
+  height: 100%;
+  padding: 0.6rem;
+  .title {
+    @include set-font('Roboto', bold, 2rem, 2.3rem, #484848);
+  }
+
+  .content {
+    @include set-font('Roboto', 500, 1.4rem, 1.6rem, #484848);
+  }
+
+  .additionalContent {
+    @include set-font('Roboto', normal, 1.2rem, 1.4rem, #f7645b);
+  }
+  .image {
+  }
+}

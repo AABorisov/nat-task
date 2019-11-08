@@ -1,0 +1,24 @@
+@import '../../styles/mixins';
+
+.modeBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  padding-top: 4.7rem;
+  width: 70%;
+}
+
+.activeModeButton {
+  @include set-font('Montserrat', bold, 2rem, 2.4rem, #ffffff);
+
+  padding-bottom: 0.9rem;
+  border-bottom: 0.3rem white solid;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.inactiveModeButton {
+  @include set-font('Montserrat', bold, 2rem, 2.4rem, rgba(255, 255, 255, 0.5));
+  cursor: pointer;
+}

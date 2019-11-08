@@ -80,6 +80,9 @@ yarn add -D sass-loader node-sass css-loader style-loader
 yarn add -D mini-css-extract-plugin
 type nul > declaration.d.ts
 yarn add -D clean-webpack-plugin
+
+yarn add classnames
+yarn add -D @types/classnames
 ```
 
 Usage:
@@ -103,3 +106,12 @@ yarn add -D @types/react @types/react-dom
 yarn add redux react-redux
 yarn add -D @types/react-redux
 ```
+
+```shell script
+# Install file-loader for loading of images
+yarn add -D file-loader
+yarn add -D copy-webpack-plugin
+
+# Copy images to assets folder
+```
+

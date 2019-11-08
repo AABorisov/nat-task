@@ -1,0 +1,41 @@
+@import '../../styles/mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  background-color: #6883e4;
+
+  box-shadow: 0 0.4rem 0.6rem rgba(0, 0, 0, 0.15);
+  border-radius: 0.5rem;
+
+  height: 8.8rem;
+  position: relative;
+}
+
+.notification {
+  display: flex;
+  flex-direction: column;
+}
+
+.icon {
+  margin: 0.5rem 2.9rem 0 3.1rem;
+}
+
+.title {
+  @include set-font('Montserrat', bold, 2rem, 2.4rem, #ffffff);
+  padding-bottom: 0.4rem;
+}
+
+.content {
+  @include set-font('Montserrat', normal, 1.4rem, 1.7rem, #ffffff);
+}
+
+.cross {
+  @include set-font('Montserrat', normal, 1.6rem, 1.6rem, #ffffff);
+  padding-right: 3.6rem;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+}
