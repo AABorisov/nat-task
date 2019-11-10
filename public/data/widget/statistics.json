@@ -1,0 +1,18 @@
+{
+  "employes": {
+    "title": "Employes",
+    "icon": "/public/assets/Subtract.png",
+    "important": 62,
+    "content": "You're in top 24%"
+  },
+  "projects": {
+    "title": "Projects",
+    "icon": "/public/assets/supervised_user_circle_24px.png",
+    "important": 23,
+    "content": "3 in this month"
+  },
+  "top": {
+    "title": "Top specialization",
+    "content": ["java", "ruby", "scala", "js"]
+  }
+}

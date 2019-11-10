@@ -7,9 +7,10 @@ interface CardProps {
   icon?: string;
   important?: number;
   content: string | Array<string>;
+  bigImportant?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ title, important, icon, content }) => {
+const Card: React.FC<CardProps> = ({ title, important, icon, content, bigImportant }) => {
   function renderContent(cardContent: string | Array<string>): JSX.Element {
     if (typeof cardContent === 'string') {
       return (
@@ -42,7 +43,7 @@ const Card: React.FC<CardProps> = ({ title, important, icon, content }) => {
       {typeof important === 'number' && icon && (
         <div className={styles.important}>
           <img alt="" src={icon} className={styles.icon} />
-          <span className={styles.number}>{important}</span>
+          <span className={bigImportant ? styles.bigImportant : styles.number}>{important}</span>
         </div>
       )}
       {renderContent(content)}

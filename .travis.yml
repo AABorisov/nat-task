@@ -10,5 +10,6 @@ branches:
 
 deploy:
   provider: heroku
+  app: nat-task
   api_key:
     secure: $HEROKU_SECRET_KEY

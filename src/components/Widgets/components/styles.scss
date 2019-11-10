@@ -9,13 +9,20 @@
   }
   .important {
     .icon {
+      margin-bottom: -0.3rem;
+    }
+    .bigImportant {
+      @include set-font('Roboto', bold, 3.2rem, 3.7rem, #484848);
+      padding-left: 1.2rem;
     }
     .number {
-      @include set-font('Roboto', bold, 3.2rem, 3.7rem, #484848);
+      @include set-font('Roboto', bold, 2.4rem, 2.8rem, #484848);
+      padding-left: 1.2rem;
     }
   }
   .content {
     @include set-font('Montserrat', 500, 1.4rem, 1.7rem, #c4c4c4);
+    padding-top: 0.6rem;
     mark {
       color: #6883e4;
       background-color: transparent;

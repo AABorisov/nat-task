@@ -16,6 +16,7 @@ const Earnings: React.FC<{}> = () => {
             icon="/public/assets/attach_money_24px.png"
             important={2289.32}
             content="+12% since last year"
+            bigImportant
           />
           <span className={styles.allStatistics}>
             ALL STATISTICS

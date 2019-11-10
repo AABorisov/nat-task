@@ -3,4 +3,7 @@ export enum ModeEnum {
   'edit',
 }
 
-export const nothing = {};
+export const path = {
+  [ModeEnum.dashboard]: '/dashboard',
+  [ModeEnum.edit]: '/edit',
+};

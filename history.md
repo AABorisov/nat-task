@@ -115,3 +115,11 @@ yarn add -D copy-webpack-plugin
 # Copy images to assets folder
 ```
 
+```shell script
+yarn add react-router-dom
+yarn add -D @types/react-router-dom
+```
+```shell script
+yarn add react-transition-group
+yarn add -D @types/react-transition-group
+```

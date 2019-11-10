@@ -41,11 +41,14 @@
   height: 100%;
   display: flex;
   flex-direction: row;
+
   .leftSide {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    width: 25rem;
+
     .allStatistics {
       @include set-font('Roboto', normal, 1.4rem, 1.6rem, #6883e4);
       cursor: pointer;
@@ -71,41 +74,4 @@
     background-position: 0 0, 3.1rem 0.8rem;
     background-size: 35.9rem 17.8rem, 31.5rem 14.5rem;
   }
-  .rightSide {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    .top {
-      display: flex;
-      flex-direction: row;
-      height: 100%;
-      .ys {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-      }
-      .graph {
-        .graphV {
-          height: 100%;
-          width: 100%;
-          background-image: url('/public/assets/graph_v-line.png');
-        }
-        .dealsGraphic {
-          height: 100%;
-          width: 100%;
-          background-image: url('/public/assets/deals_graphic.png');
-        }
-      }
-    }
-    .bottom {
-      padding-left: 3rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-}
-
-.statistics {
 }

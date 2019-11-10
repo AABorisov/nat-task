@@ -1,19 +1,20 @@
 import * as React from 'react';
-import ModeBar from './ModeBar/ModeBar';
-import { ModeEnum } from './ModeBar/types';
-import Main from './Main/Main';
-
-import style = require('./styles.scss');
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import Layout from './Layout';
+import DashboardPage from '../pages/DashboardPage';
+import EditPage from '../pages/EditPage';
 
 const App: React.FC<{}> = () => {
   return (
-    <div className={style.app}>
-      <header className={style.header}>
-        <ModeBar mode={ModeEnum.dashboard} />
-      </header>
-      <Main mode={ModeEnum.dashboard} />
-      <footer className={style.footer}>Hosta LLC 2015–2019. Made by AABorisov</footer>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Switch>
+          <Redirect exact from="/" to="/dashboard" />
+          <Route path="/dashboard" component={DashboardPage} />
+          <Route path="/edit" component={EditPage} />
+        </Switch>
+      </Layout>
+    </BrowserRouter>
   );
 };
 

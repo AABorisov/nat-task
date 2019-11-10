@@ -1,27 +1,26 @@
+import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import * as React from 'react';
-import Widgets from '../Widgets/Widgets';
-import Posts from '../Posts/Posts';
-import Notification from '../Notification/Notification';
-import ProjectStatuses from '../ProjectsStatuses/ProjectStatuses';
-import NotificationsSetting from '../Settings/NotificationsSetting';
 import { ModeEnum } from '../ModeBar/types';
 
 import styles = require('./styles.scss');
 
 interface MainProps {
   mode: ModeEnum;
+  children: JSX.Element | Array<JSX.Element>;
 }
 
-const Main: React.FC<MainProps> = ({ mode = ModeEnum.dashboard }) => {
-  const isDashboard = mode === ModeEnum.dashboard;
+const Main: React.FC<MainProps> = ({ mode, children }) => {
   return (
-    <main className={styles.main}>
-      {isDashboard && <Widgets />}
-      <Posts mode={mode} />
-      {isDashboard && <Notification />}
-      <ProjectStatuses mode={mode} />
-      {!isDashboard && <NotificationsSetting />}
-    </main>
+    <TransitionGroup component={null}>
+      <CSSTransition
+        in
+        timeout={1000}
+        classNames={mode === ModeEnum.dashboard ? 'SlideIn' : 'SlideOut'}
+        unmountOnExit
+      >
+        <main className={styles.main}>{children}</main>
+      </CSSTransition>
+    </TransitionGroup>
   );
 };
 

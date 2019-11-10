@@ -3,6 +3,7 @@ import MainElement from '../Main/MainElement';
 import Post from './Post';
 import { PostType } from './types';
 import { ModeEnum } from '../ModeBar/types';
+import NewPost from './NewPost';
 
 import styles = require('./styles.scss');
 
@@ -172,6 +173,7 @@ const Posts: React.FC<PostsProps> = ({ mode = ModeEnum.dashboard }) => {
         {postsToDisplay.map(post => {
           return <Post post={post} key={post.id} />;
         })}
+        {!isDashboard && <NewPost />}
       </div>
     </MainElement>
   );

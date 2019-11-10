@@ -11,6 +11,9 @@ module.exports = (env, options) => {
 
   return {
     entry: './src/index.tsx',
+    devServer: {
+      historyApiFallback: true,
+    },
 
     resolve: {
       // Add '.ts' and '.tsx' as resolvable extensions.
@@ -61,6 +64,9 @@ module.exports = (env, options) => {
       new CopyWebpackPlugin([{
         from: 'public/assets',
         to: 'public/assets'
+      }, {
+        from: 'public/data',
+        to: 'public/data'
       }]),
       new MiniCssExtractPlugin({
         filename: '[name].css',
