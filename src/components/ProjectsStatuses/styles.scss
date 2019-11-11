@@ -9,15 +9,17 @@
 
 .projectStatusesTable {
   display: grid;
-  grid-template-columns: 15rem 16rem 3.8rem 20rem 15rem;
-  grid-template-rows: repeat(auto-fill, 4.2rem);
+  //grid-template-columns: 15rem 16rem 3.8rem 20rem 15rem;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(auto-fill, [line] 4.2rem);
 
-  grid-column-gap: 2rem;
+  //grid-column-gap: 2rem;
   grid-row-gap: 1rem;
   align-items: center;
+  justify-content: space-around;
 
   &.editmode {
-    grid-template-columns: 15rem 16rem 3.8rem 20rem 15rem 3.8rem;
+    grid-template-columns: repeat(6, auto);
   }
 
   > div {
@@ -31,6 +33,7 @@
   }
   .remove {
     color: red;
+    cursor: pointer;
   }
 }
 

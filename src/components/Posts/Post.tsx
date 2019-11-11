@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { PostType } from './types';
 import AuthorInfo from '../base/AuthorInfo/AuthorInfo';
+import PostCard from './PostCard/PostCard';
 
 import styles = require('./styles.scss');
 
@@ -10,7 +11,7 @@ interface PostProps {
 
 const Post: React.FC<PostProps> = ({ post }) => {
   return (
-    <article className={styles.post}>
+    <PostCard>
       <div className={styles.postContent}>
         {post.title && <div className={styles.title}>{post.title}</div>}
         {post.content && <div className={styles.content}>{post.content}</div>}
@@ -21,7 +22,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       </div>
       {/* <div className={ styles.border }/>*/}
       <AuthorInfo author={post.author} />
-    </article>
+    </PostCard>
   );
 };
 

@@ -33,6 +33,7 @@
 }
 
 .cross {
+  all: unset;
   @include set-font('Montserrat', normal, 1.6rem, 1.6rem, #ffffff);
   padding-right: 3.6rem;
   cursor: pointer;
