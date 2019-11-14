@@ -3,8 +3,12 @@
     "title": "Earnings",
     "icon": "/public/assets/attach_money_24px.png",
     "important": 2289.32,
-    "content": "+12% since last year"
+    "content": "+12% since last year",
+    "bigImportant": true
   },
   "linkToStatistics": "https://machinelearningmastery.com/all-of-statistics-for-machine-learning/",
-  "graph": {}
+  "graph": {
+    "foreground": "/public/assets/deals_graphic.png",
+    "background": "/public/assets/graph_v-line.png"
+  }
 }

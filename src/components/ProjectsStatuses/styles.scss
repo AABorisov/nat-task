@@ -32,8 +32,11 @@
     text-transform: uppercase;
   }
   .remove {
-    color: red;
+    all: unset;
     cursor: pointer;
+    width: 14px;
+    height: 14px;
+    background-image: url("/public/assets/delete_project.png");
   }
 }
 

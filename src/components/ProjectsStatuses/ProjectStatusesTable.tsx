@@ -2,15 +2,21 @@ import * as React from 'react';
 import cx from 'classnames';
 import { ProjectStatus } from './types';
 import { ModeEnum } from '../ModeBar/types';
+import { RemoveProjectStatusAction } from '../../store/projectStatuses/types';
 
 import styles = require('./styles.scss');
 
 interface ProjectStatusesTableProps {
   projectStatuses: Array<ProjectStatus>;
   mode: ModeEnum;
+  onRemove: (id: number) => RemoveProjectStatusAction;
 }
 
-const ProjectStatusesTable: React.FC<ProjectStatusesTableProps> = ({ projectStatuses, mode }) => {
+const ProjectStatusesTable: React.FC<ProjectStatusesTableProps> = ({
+  projectStatuses,
+  mode,
+  onRemove,
+}) => {
   const isDashboard = mode === ModeEnum.dashboard;
   function renderStatusLine(project: ProjectStatus): JSX.Element {
     return (
@@ -23,6 +29,9 @@ const ProjectStatusesTable: React.FC<ProjectStatusesTableProps> = ({ projectStat
         />
       </div>
     );
+  }
+  function onRemoveClick(event: React.MouseEvent<HTMLButtonElement>): void {
+    onRemove(parseInt(event.currentTarget.value, 10));
   }
   return (
     <div className={styles.projectStatusesWrapper}>
@@ -43,9 +52,15 @@ const ProjectStatusesTable: React.FC<ProjectStatusesTableProps> = ({ projectStat
               {new Date(project.realiseDate).toDateString()}
             </div>,
             !isDashboard && (
-              <div key={`${project.id}_remove`} className={styles.remove}>
-                x
-              </div>
+              <button
+                type="button"
+                value={project.id}
+                title="Remove project status"
+                key={`${project.id}_remove`}
+                className={styles.remove}
+                onClick={onRemoveClick}
+                role="row"
+              />
             ),
           ]);
         }, [])}

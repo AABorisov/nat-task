@@ -1,39 +1,29 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import ModeButton from './ModeButton';
 import { ModeEnum } from './types';
+import { AppState } from '../../store';
 
 import style = require('./styles.scss');
 
-interface ModeBarProps {
-  mode?: ModeEnum;
+interface ModeBarStateProps {
+  mode: ModeEnum;
 }
 
-const ModeBar: React.FC<ModeBarProps> = ({ mode: defaultMode = ModeEnum.dashboard }) => {
-  const [mode, setMode] = React.useState(defaultMode);
+type ModeBarProps = ModeBarStateProps;
+
+const ModeBar: React.FC<ModeBarProps> = ({ mode }) => {
   const isDashboard = mode === ModeEnum.dashboard;
-  const toggleMode = (): void => {
-    if (isDashboard) {
-      setMode(ModeEnum.edit);
-    } else {
-      setMode(ModeEnum.dashboard);
-    }
-  };
   return (
     <nav className={style.modeBar}>
-      <ModeButton
-        isActive={isDashboard}
-        title="Dashboard mode"
-        toMode={ModeEnum.dashboard}
-        toggleMode={toggleMode}
-      />
-      <ModeButton
-        isActive={!isDashboard}
-        title="Edit mode"
-        toMode={ModeEnum.edit}
-        toggleMode={toggleMode}
-      />
+      <ModeButton isActive={isDashboard} title="Dashboard mode" toMode={ModeEnum.dashboard} />
+      <ModeButton isActive={!isDashboard} title="Edit mode" toMode={ModeEnum.edit} />
     </nav>
   );
 };
 
-export default ModeBar;
+const mapStateToProps = (state: AppState): ModeBarStateProps => ({
+  mode: state.mode,
+});
+
+export default connect(mapStateToProps)(ModeBar);

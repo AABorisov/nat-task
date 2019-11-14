@@ -1,15 +1,47 @@
 import * as React from 'react';
+import { bindActionCreators, Dispatch } from 'redux';
+import { connect } from 'react-redux';
 import MainElement from '../Main/MainElement';
 import Toggle from '../base/Toggle/Toggle';
+import { AppState } from '../../store';
+import { setNotificationsSetting } from '../../store/settings/actions';
+import { SetNotificationsSettingAction } from '../../store/settings/types';
 
-// interface NotificationsSettingProps {}
+interface NotificationsSettingStateProps {
+  showNotifications: boolean;
+}
+interface NotificationsSettingDispatchProps {
+  setNotifications: (showNotifications: boolean) => SetNotificationsSettingAction;
+}
 
-const NotificationsSetting: React.FC<{}> = () => {
+interface NotificationsSettingProps
+  extends NotificationsSettingStateProps,
+    NotificationsSettingDispatchProps {}
+
+const NotificationsSetting: React.FC<NotificationsSettingProps> = ({
+  showNotifications,
+  setNotifications,
+}) => {
   return (
     <MainElement title="Notifications">
-      <Toggle />
+      <Toggle active={showNotifications} onToggle={setNotifications} />
     </MainElement>
   );
 };
 
-export default NotificationsSetting;
+const mapStateToProps = (state: AppState): NotificationsSettingStateProps => ({
+  showNotifications: state.settings.showNotifications,
+});
+
+const mapDispatchToProps = (dispatch: Dispatch): NotificationsSettingDispatchProps =>
+  bindActionCreators(
+    {
+      setNotifications: setNotificationsSetting,
+    },
+    dispatch
+  );
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NotificationsSetting);

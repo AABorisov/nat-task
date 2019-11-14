@@ -1,34 +1,44 @@
 import * as React from 'react';
 import Widget from './Widget';
 import Card from './components/Card';
+import { EarningsData } from '../../store/widgets/types';
 
 import styles = require('./styles.scss');
 
-// interface EarningsProps {}
+interface EarningsProps {
+  earnings?: EarningsData;
+  empty: boolean;
+}
 
-const Earnings: React.FC<{}> = () => {
+const Earnings: React.FC<EarningsProps> = ({ earnings, empty }) => {
   return (
     <Widget className={styles.earningsWidget}>
-      <div className={styles.earnings}>
-        <div className={styles.leftSide}>
-          <Card
-            title="Earnings"
-            icon="/public/assets/attach_money_24px.png"
-            important={2289.32}
-            content="+12% since last year"
-            bigImportant
+      {!empty && (
+        <div className={styles.earnings}>
+          <div className={styles.leftSide}>
+            <Card card={earnings.earnings} />
+            <a
+              className={styles.allStatistics}
+              href={earnings.linkToStatistics}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              ALL STATISTICS
+              <img
+                alt="Show all statistics"
+                src="/public/assets/arrow_forward_24px.png"
+                className={styles.icon}
+              />
+            </a>
+          </div>
+          <div
+            className={styles.dealsGraphic}
+            style={{
+              backgroundImage: `url(${earnings.graph.foreground}), url(${earnings.graph.background})`,
+            }}
           />
-          <span className={styles.allStatistics}>
-            ALL STATISTICS
-            <img
-              alt="Show all statistics"
-              src="/public/assets/arrow_forward_24px.png"
-              className={styles.icon}
-            />
-          </span>
         </div>
-        <div className={styles.dealsGraphic} />
-      </div>
+      )}
     </Widget>
   );
 };

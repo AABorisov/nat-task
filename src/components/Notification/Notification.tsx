@@ -1,21 +1,31 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import MainElement from '../Main/MainElement';
+import { AppState } from '../../store';
 
 import styles = require('./styles.scss');
 
-interface NotificationProps {
-  showNotification?: boolean;
+interface NotificationStateProps {
+  showNotification: boolean;
 }
 
+type NotificationProps = NotificationStateProps;
+
 const Notification: React.FC<NotificationProps> = ({
-  showNotification: defaultShowNotification = true,
+  showNotification: defaultShowNotification,
 }) => {
   const [showNotification, setNotification]: [boolean, Function] = React.useState(
     defaultShowNotification
   );
+
+  React.useEffect((): void => {
+    setNotification(defaultShowNotification);
+  }, [defaultShowNotification]);
+
   function closeNotification(): void {
     setNotification(false);
   }
+
   React.useEffect((): (() => void) => {
     if (showNotification) {
       const timer = setTimeout(closeNotification, 8000);
@@ -25,6 +35,7 @@ const Notification: React.FC<NotificationProps> = ({
     }
     return (): void => {};
   }, [showNotification]);
+
   return showNotification ? (
     <MainElement>
       <div className={styles.wrapper}>
@@ -43,4 +54,8 @@ const Notification: React.FC<NotificationProps> = ({
   ) : null;
 };
 
-export default Notification;
+const mapStateToProps = (state: AppState): NotificationStateProps => ({
+  showNotification: state.settings.showNotifications,
+});
+
+export default connect(mapStateToProps)(Notification);

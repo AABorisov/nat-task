@@ -8,13 +8,12 @@ interface ModeButtonProps {
   isActive: boolean;
   title: string;
   toMode: ModeEnum;
-  toggleMode: () => void;
 }
 
-const ModeButton: React.FC<ModeButtonProps> = ({ isActive, title, toMode, toggleMode }) => {
+const ModeButton: React.FC<ModeButtonProps> = ({ isActive, title, toMode }) => {
   const className = isActive ? styles.activeModeButton : styles.inactiveModeButton;
   return (
-    <Link className={className} to={path[toMode]} onClick={!isActive && toggleMode}>
+    <Link className={className} to={path[toMode]}>
       {title}
     </Link>
   );

@@ -1,6 +1,7 @@
 repo: https://github.com/AABorisov/nat-task.git
 
-Pres
+Prerequisites:
+* Installed Node, NPM, Yarn
 
 
 ```shell script
@@ -125,4 +126,9 @@ yarn add -D @types/react-router-dom
 ```shell script
 yarn add react-transition-group
 yarn add -D @types/react-transition-group
+```
+
+
+```shell script
+yarn add redux-thunk
 ```

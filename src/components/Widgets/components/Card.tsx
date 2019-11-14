@@ -1,16 +1,13 @@
 import * as React from 'react';
+import { WidgetType } from '../../../store/widgets/types';
 
 import styles = require('./styles.scss');
 
-interface CardProps {
-  title: string;
-  icon?: string;
-  important?: number;
-  content: string | Array<string>;
-  bigImportant?: boolean;
-}
+type CardProps = {
+  card: WidgetType;
+};
 
-const Card: React.FC<CardProps> = ({ title, important, icon, content, bigImportant }) => {
+const Card: React.FC<CardProps> = ({ card: { title, important, icon, content, bigImportant } }) => {
   function renderContent(cardContent: string | Array<string>): JSX.Element {
     if (typeof cardContent === 'string') {
       return (

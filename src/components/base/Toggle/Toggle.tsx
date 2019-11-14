@@ -8,11 +8,15 @@ interface ToggleProps {
   onToggle?: (value: boolean) => void;
 }
 
-const Toggle: React.FC<ToggleProps> = ({ active: defaultActive = true }) => {
+const Toggle: React.FC<ToggleProps> = ({ active: defaultActive = true, onToggle = null }) => {
   const [active, setActive]: [boolean, Function] = React.useState(defaultActive);
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
+    const { checked } = event.target;
     // Redux Action instead on next line
-    setActive(event.target.checked);
+    setActive(checked);
+    if (typeof onToggle === 'function') {
+      onToggle(checked);
+    }
   }
 
   return (

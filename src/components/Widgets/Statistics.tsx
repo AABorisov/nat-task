@@ -1,29 +1,25 @@
 import * as React from 'react';
 import Widget from './Widget';
 import Card from './components/Card';
+import { StatisticsData } from '../../store/widgets/types';
 
 import styles = require('./styles.scss');
 
-// interface StatisticsProps {}
+interface StatisticsProps {
+  statistics: StatisticsData;
+  empty: boolean;
+}
 
-const Statistics: React.FC<{}> = () => {
+const Statistics: React.FC<StatisticsProps> = ({ statistics, empty }) => {
   return (
     <Widget className={styles.statisticsWidget}>
-      <div className={styles.top}>
-        <Card
-          title="Employes"
-          icon="/public/assets/Subtract.png"
-          important={62}
-          content={`You're in top 24%`}
-        />
-        <Card
-          title="Projects"
-          icon="/public/assets/supervised_user_circle_24px.png"
-          important={23}
-          content="3 in this month"
-        />
-      </div>
-      <Card title="Top specialization" content={['java', 'ruby', 'scala', 'js']} />
+      {!empty && (
+        <div className={styles.top}>
+          <Card card={statistics.employes} />
+          <Card card={statistics.projects} />
+        </div>
+      )}
+      {!empty && <Card card={statistics.top} />}
     </Widget>
   );
 };
