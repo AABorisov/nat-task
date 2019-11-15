@@ -1,0 +1,30 @@
+@import '../../../styles/mixins';
+
+.postContent {
+  padding: 1.5rem 2.3rem .5rem 2.3rem;
+
+  .content {
+    @include set-font('Roboto', 500, 1.4rem, 1.6rem, #484848);
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+  }
+
+  .additionalContent {
+    @include set-font('Roboto', normal, 1.2rem, 1.4rem, #f7645b);
+  }
+  .image {
+  }
+}
+
+.title {
+  @include set-font('Roboto', bold, 2rem, 2.3rem, #ffffff);
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+}

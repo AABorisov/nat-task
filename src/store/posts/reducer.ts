@@ -27,13 +27,13 @@ export function postsReducer(state: PostsState = initialState, action: PostsActi
     case REMOVE_POST:
       return {
         ...state,
-        posts: state.posts.filter(post => post.id !== action.payload.id),
+        posts: state.posts.filter(post => post.id !== action.payload),
       };
     case PUBLISH_POST:
       return {
         ...state,
         posts: state.posts.map(post => {
-          if (post.id !== action.payload.id) {
+          if (post.id !== action.payload) {
             return post;
           }
           return {
@@ -46,7 +46,7 @@ export function postsReducer(state: PostsState = initialState, action: PostsActi
       return {
         ...state,
         posts: state.posts.map(post => {
-          if (post.id !== action.payload.id) {
+          if (post.id !== action.payload) {
             return post;
           }
           return {

@@ -33,7 +33,7 @@ export const FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR';
 
 export interface RemovePostAction {
   type: typeof REMOVE_POST;
-  payload: PostType;
+  payload: number;
 }
 
 export interface AddPostAction {
@@ -43,12 +43,12 @@ export interface AddPostAction {
 
 export interface PublishPostAction {
   type: typeof PUBLISH_POST;
-  payload: PostType;
+  payload: number;
 }
 
 export interface UnpublishPostAction {
   type: typeof UNPUBLISH_POST;
-  payload: PostType;
+  payload: number;
 }
 
 export interface FetchPostsPendingAction {

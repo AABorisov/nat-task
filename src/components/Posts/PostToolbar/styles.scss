@@ -1,0 +1,46 @@
+@import '../../../styles/mixins';
+.postToolbar {
+  display: grid;
+  grid-auto-flow:column;
+  grid-column-gap: 0.4rem;
+
+  height: 3.7rem;
+  padding: 0.7rem;
+
+  border-bottom: 0.1rem solid rgba(104, 131, 228, 0.2);
+  &>button  {
+    all: unset;
+    border: 0.1rem solid #f7645b;
+    border-radius: 0.3rem;
+    @include set-font('Montserrat', 500, 1rem, 1.2rem);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .unpublish {
+    color: #f7645b;
+    background-color: #ffffff;
+    &:hover {
+      background: #f7645b;
+      color: #ffffff;
+    }
+  }
+  .publish {
+    border: 0.1rem solid #6883e4;
+    border-radius: 0.3rem;
+    @include set-font('Montserrat', 500, 1rem, 1.2rem, #6883e4);
+    background-color: #ffffff;
+    text-transform: uppercase;
+    &:hover {
+      background: #6883e4;
+      color: #ffffff;
+    }
+  }
+  .remove {
+    color: #f7645b;
+    background-color: #ffffff;
+    &:hover {
+      background-color: #f7645b;
+      color: #ffffff;
+    }
+  }
+}

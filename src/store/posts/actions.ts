@@ -25,19 +25,19 @@ export const addPost = (post: PostType): AddPostAction => ({
   payload: post,
 });
 
-export const removePost = (post: PostType): RemovePostAction => ({
+export const removePost = (id: number): RemovePostAction => ({
   type: REMOVE_POST,
-  payload: post,
+  payload: id,
 });
 
-export const publishPost = (post: PostType): PublishPostAction => ({
+export const publishPost = (id: number): PublishPostAction => ({
   type: PUBLISH_POST,
-  payload: post,
+  payload: id,
 });
 
-export const unpublishPost = (post: PostType): UnpublishPostAction => ({
+export const unpublishPost = (id: number): UnpublishPostAction => ({
   type: UNPUBLISH_POST,
-  payload: post,
+  payload: id,
 });
 
 export const fetchPostsPending = (): FetchPostsPendingAction => ({

@@ -99,7 +99,7 @@ import * as styles3 from './styles.scss';
 
 const root = document.getElementById('root');
 const para = document.createElement('p');
-para.innerHTML = '<p class= ' + styles.className + '>Hello from root, Natera.</p>';
+para.innerHTML = '<p class= ' + styles.className + '>Hello from root, people.</p>';
 root.appendChild(para);
 ```
 
