@@ -15,14 +15,26 @@ interface PostProps {
   onUnpublish: (id: number) => void;
   onPublish: (id: number) => void;
   onRemove: (id: number) => void;
+  onShowPost: (post: PostType) => void;
 }
 
-const Post: React.FC<PostProps> = ({ post, mode, onUnpublish, onPublish, onRemove }) => {
+const Post: React.FC<PostProps> = ({
+  post,
+  mode,
+  onUnpublish,
+  onPublish,
+  onRemove,
+  onShowPost,
+}) => {
   const isEdit = mode === ModeEnum.edit;
   const isPublished = post.published;
   const hasImage = !!post.image;
+  function onPostClick(event: React.MouseEvent): void {
+    event.preventDefault();
+    onShowPost(post);
+  }
   return (
-    <PostCard>
+    <PostCard onClick={onPostClick}>
       <div className={cx(styles.postTop, hasImage && styles.postTopBorder)}>
         {isEdit && (
           <PostToolbar
@@ -32,12 +44,7 @@ const Post: React.FC<PostProps> = ({ post, mode, onUnpublish, onPublish, onRemov
             onRemove={onRemove}
           />
         )}
-        <PostContent
-          title={post.title}
-          content={post.content}
-          additionalContent={post.additionalContent}
-          image={post.image}
-        />
+        <PostContent title={post.title} image={post.image} />
       </div>
       {isPublished ? (
         <div className={styles.border} />

@@ -36,7 +36,7 @@ const Card: React.FC<CardProps> = ({ card: { title, important, icon, content, bi
   }
   return (
     <div className={styles.card}>
-      <h2 className={styles.title}>{title}</h2>
+      {title && <h2 className={styles.title}>{title}</h2>}
       {typeof important === 'number' && icon && (
         <div className={styles.important}>
           <img alt="" src={icon} className={styles.icon} />

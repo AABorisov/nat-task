@@ -1,58 +1,66 @@
 import * as React from 'react';
 import cx from 'classnames';
+import { PostTitle } from '../../../store/posts/types';
 
 import styles = require('./styles.scss');
 
 interface PostContentProps {
-  title: string;
-  content: string;
-  additionalContent?: string;
+  title: PostTitle;
   image: string;
 }
 
-const PostContent: React.FC<PostContentProps> = ({ title, content, additionalContent, image }) => {
-  function renderCard() {
+const PostContent: React.FC<PostContentProps> = ({ title, image }) => {
+  function renderCard(): JSX.Element {
     return (
-      <>
-        {title && <div className={styles.title}>{title}</div>}
-        {content && <div className={styles.content}>{content}</div>}
-        {additionalContent && <div className={styles.additionalContent}>{additionalContent}</div>}
-        {/* {image && <div className={styles.image}>{image}</div>}*/}
-      </>
-    );
-  }
-  function renderTitleWithImage() {
-    return (
-      <div
-        style={{
-          backgroundImage: `url(${image})`,
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: '100% auto',
-          height: '100%',
-          verticalAlign: 'bottom',
-          display: 'flex',
-        }}
-      >
-        <div className={cx(styles.postContent, styles.title)}>{title}</div>
+      <div className={styles.card}>
+        <div className={styles.important}>
+          <img alt="" src={title.icon} className={styles.icon} />
+          <div className={styles.titleGroup}>
+            <span
+              className={styles.title}
+              dangerouslySetInnerHTML={{
+                __html: title.title.replace(/\w*\S*\d\S*/g, '<mark>$&</mark>'),
+              }}
+            />
+            <span className={styles.content}>{title.content}</span>
+          </div>
+        </div>
+        <span
+          className={styles.additionalContent}
+          dangerouslySetInnerHTML={{
+            __html: title.additionalContent.replace(/\w*\S*\d\S*/g, '<mark>$&</mark>'),
+          }}
+        />
       </div>
     );
   }
-  function renderContent() {
+  function renderTitleWithImage(): JSX.Element {
+    return (
+      <div className={styles.titleWithImage}>
+        <div
+          className={styles.image}
+          style={{
+            backgroundImage: `url(${image})`,
+          }}
+        >
+          <div className={cx(styles.title, styles.ellipsis)}>{title.title}</div>
+        </div>
+      </div>
+    );
+  }
+  function renderTitle(): JSX.Element {
     return (
       <div className={styles.postContent}>
-        {title && <div className={styles.title}>{title}</div>}
-        {content && <div className={styles.content}>{content}</div>}
-        {additionalContent && <div className={styles.additionalContent}>{additionalContent}</div>}
-        {/* {image && <div className={styles.image}>{image}</div>}*/}
+        {title.title && <div className={cx(styles.title, styles.ellipsis)}>{title.title}</div>}
       </div>
     );
   }
 
   return (
     <>
-      {!!additionalContent && renderCard()}
-      {!additionalContent && !!image && renderTitleWithImage()}
-      {!additionalContent && !!content && renderContent()}
+      {!!title.additionalContent && renderCard()}
+      {!title.additionalContent && !!image && renderTitleWithImage()}
+      {!title.additionalContent && !image && renderTitle()}
     </>
   );
 };

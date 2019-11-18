@@ -8,12 +8,15 @@ import {
   FetchPostsErrorAction,
   FetchPostsPendingAction,
   FetchPostsSuccessAction,
+  PostsModalType,
   PostsResponseData,
   PostType,
   PUBLISH_POST,
   PublishPostAction,
   REMOVE_POST,
   RemovePostAction,
+  SHOW_MODAL,
+  ShowModalAction,
   UNPUBLISH_POST,
   UnpublishPostAction,
 } from './types';
@@ -65,3 +68,14 @@ export const fetchPosts = (): ThunkResult<Promise<void>, FetchPostsActions> => a
     dispatch(fetchPostsError());
   }
 };
+
+export const showModal = (
+  modal: PostsModalType,
+  modalPost: PostType | {} = {}
+): ShowModalAction => ({
+  type: SHOW_MODAL,
+  payload: {
+    modal,
+    modalPost,
+  },
+});

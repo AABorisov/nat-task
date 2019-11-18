@@ -1,14 +1,14 @@
 @import '../../../styles/mixins';
 .postToolbar {
   display: grid;
-  grid-auto-flow:column;
+  grid-auto-flow: column;
   grid-column-gap: 0.4rem;
 
   height: 3.7rem;
   padding: 0.7rem;
 
   border-bottom: 0.1rem solid rgba(104, 131, 228, 0.2);
-  &>button  {
+  & > button {
     all: unset;
     border: 0.1rem solid #f7645b;
     border-radius: 0.3rem;

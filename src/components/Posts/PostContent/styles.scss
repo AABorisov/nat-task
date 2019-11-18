@@ -1,15 +1,13 @@
 @import '../../../styles/mixins';
 
 .postContent {
-  padding: 1.5rem 2.3rem .5rem 2.3rem;
+  padding: 1.5rem 2.3rem 0.5rem 2.3rem;
+  height: 100%;
 
-  .content {
+  & .title {
     @include set-font('Roboto', 500, 1.4rem, 1.6rem, #484848);
+    overflow-wrap: break-word;
     -webkit-line-clamp: 5;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    display: -webkit-box;
-    text-overflow: ellipsis;
   }
 
   .additionalContent {
@@ -19,12 +17,70 @@
   }
 }
 
-.title {
-  @include set-font('Roboto', bold, 2rem, 2.3rem, #ffffff);
-  overflow-wrap: break-word;
-  -webkit-line-clamp: 2;
+.ellipsis {
   -webkit-box-orient: vertical;
   overflow: hidden;
   display: -webkit-box;
   text-overflow: ellipsis;
+}
+
+.titleWithImage {
+  flex-grow: 10;
+  height: 100%;
+
+  .image {
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    .title {
+      text-align: center;
+      text-shadow: -1px 0 #bababa, 0 1px #bababa, 1px 0 #bababa, 0 -1px #bababa;
+
+      @include set-font('Roboto', bold, 2rem, 2.3rem, #ffffff);
+      overflow-wrap: break-word;
+      -webkit-line-clamp: 2;
+    }
+  }
+}
+
+.card {
+  padding: 1.5rem 2.3rem 0.5rem 2.3rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .important {
+    display: flex;
+    flex-direction: row;
+    .icon {
+      width: 5.3rem;
+      height: 5.3rem;
+      flex-shrink: 0;
+    }
+    .titleGroup {
+      display: flex;
+      flex-direction: column;
+      .title {
+        @include set-font('Roboto', bold, 1.6rem, 2rem, #6883e4);
+        mark {
+          @include set-font('Roboto', bold, 3rem, 3.5rem, #6883e4);
+          background-color: transparent;
+        }
+      }
+      .content {
+        @include set-font('Roboto', 500, 1.4rem, 1.6rem, #484848);
+      }
+    }
+  }
+  .additionalContent {
+    @include set-font('Roboto', normal, 1.2rem, 1.4rem, #c4c4c4);
+    mark {
+      color: #f7645b;
+      background-color: transparent;
+    }
+  }
 }

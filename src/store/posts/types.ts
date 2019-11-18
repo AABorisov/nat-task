@@ -5,12 +5,17 @@ export interface AuthorType {
   position: string;
   photo: string;
 }
+export interface PostTitle {
+  title: string;
+  content?: string;
+  additionalContent?: string;
+  icon?: string;
+}
 export interface PostType {
   id: number;
   published: boolean;
-  title: string;
+  title: PostTitle;
   content: string;
-  additionalContent?: string;
   image: string;
   author: AuthorType;
 }
@@ -21,7 +26,17 @@ export interface PostsResponseData {
   posts: PostsType;
 }
 
-export interface PostsState extends PostsResponseData, ThunkFetchState {}
+export enum PostsModalType {
+  NONE,
+  NEW_POST,
+  POST,
+}
+
+export interface PostsState extends PostsResponseData, ThunkFetchState {
+  modal: PostsModalType;
+  modalPost: PostType | {};
+  authors: Array<AuthorType>;
+}
 
 export const REMOVE_POST = 'REMOVE_POST';
 export const ADD_POST = 'ADD_POST';
@@ -30,6 +45,7 @@ export const UNPUBLISH_POST = 'UNPUBLISH_POST';
 export const FETCH_POSTS_PENDING = 'FETCH_POSTS_PENDING';
 export const FETCH_POSTS_SUCCESS = 'FETCH_POSTS_SUCCESS';
 export const FETCH_POSTS_ERROR = 'FETCH_POSTS_ERROR';
+export const SHOW_MODAL = 'SHOW_MODAL';
 
 export interface RemovePostAction {
   type: typeof REMOVE_POST;
@@ -64,6 +80,14 @@ export interface FetchPostsErrorAction {
   type: typeof FETCH_POSTS_ERROR;
 }
 
+export interface ShowModalAction {
+  type: typeof SHOW_MODAL;
+  payload: {
+    modal: PostsModalType;
+    modalPost: PostType | {};
+  };
+}
+
 export type FetchPostsActions =
   | FetchPostsPendingAction
   | FetchPostsSuccessAction
@@ -74,4 +98,5 @@ export type PostsActions =
   | RemovePostAction
   | AddPostAction
   | PublishPostAction
-  | UnpublishPostAction;
+  | UnpublishPostAction
+  | ShowModalAction;

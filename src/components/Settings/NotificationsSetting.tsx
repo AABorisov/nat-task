@@ -24,7 +24,11 @@ const NotificationsSetting: React.FC<NotificationsSettingProps> = ({
 }) => {
   return (
     <MainElement title="Notifications">
-      <Toggle active={showNotifications} onToggle={setNotifications} />
+      <Toggle
+        active={showNotifications}
+        onToggle={setNotifications}
+        label="Show all notifications"
+      />
     </MainElement>
   );
 };

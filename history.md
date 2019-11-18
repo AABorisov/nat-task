@@ -132,3 +132,19 @@ yarn add -D @types/react-transition-group
 ```shell script
 yarn add redux-thunk
 ```
+
+
+
+        <section className={styles.modalActions}>
+          {props.actions.map(action => {
+            return (
+              <button
+                className={styles.btn}
+                onClick={onActionClick(action.onClick)}
+                key={action.title}
+              >
+                {action.title}
+              </button>
+            );
+          })}
+        </section>

@@ -6,10 +6,16 @@ import styles = require('./styles.scss');
 interface ToggleProps {
   active?: boolean;
   onToggle?: (value: boolean) => void;
+  label: string;
 }
 
-const Toggle: React.FC<ToggleProps> = ({ active: defaultActive = true, onToggle = null }) => {
+const Toggle: React.FC<ToggleProps> = ({
+  active: defaultActive = true,
+  onToggle = null,
+  label,
+}) => {
   const [active, setActive]: [boolean, Function] = React.useState(defaultActive);
+
   function handleInputChange(event: React.ChangeEvent<HTMLInputElement>): void {
     const { checked } = event.target;
     // Redux Action instead on next line
@@ -25,7 +31,7 @@ const Toggle: React.FC<ToggleProps> = ({ active: defaultActive = true, onToggle 
         <input type="checkbox" id="toggle" onChange={handleInputChange} checked={active} />
         <span className={cx(styles.slider, styles.round)} />
       </label>
-      <span className={styles.label}>Show all notifications</span>
+      <span className={styles.label}>{label}</span>
     </div>
   );
 };

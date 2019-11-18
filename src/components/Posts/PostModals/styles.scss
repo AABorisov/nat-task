@@ -1,0 +1,104 @@
+@import '../../../styles/mixins';
+
+.newPostFooter {
+  display: flex;
+  justify-content: space-between;
+  .spanOr {
+    padding: 2rem;
+  }
+  .cancelBtn {
+    all: unset;
+    @include set-font('Montserrat', 500, 1rem, 1.2rem, #757575);
+    text-align: center;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+  }
+}
+
+.newPostModalContent {
+  padding: 0 6rem;
+  .inputBox {
+    border: 1px solid #dadada;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    padding-left: 1rem;
+    @include set-font('Roboto', normal, 1.2rem, 1.4rem, #484848);
+    height: 2.9rem;
+    &::placeholder {
+      color: #aeaeae;
+    }
+  }
+  .title {
+    margin-bottom: 1rem;
+  }
+  .content {
+    height: 11.5rem;
+    padding-top: 1rem;
+  }
+  .photo {
+  }
+  .author {
+    padding-left: 0;
+    height: 4rem;
+    border: none;
+  }
+  .error {
+    border: 1px solid red;
+  }
+}
+.groupWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2.5rem;
+  .groupTitle {
+    @include set-font('Montserrat', 500, 1.4rem, 1.7rem, #c4c4c4);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+.postFooter {
+  display: flex;
+  justify-content: center;
+}
+
+.footerBtn {
+  all: unset;
+  height: 3.2rem;
+  width: 14.8rem;
+  background: #6883e4;
+  border-radius: 0.5rem;
+  text-align: center;
+  @include set-font('Montserrat', bold, 1.2rem, 1.5rem, white);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.postTitle {
+  @include set-font('Roboto', 500, 2.4rem, 2.8rem, #484848);
+}
+
+.postContent {
+  margin-top: 2.2rem;
+  @include set-font('Roboto', normal, 1.4rem, 2rem, #484848);
+}
+
+.flexBetween {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 3rem 6rem;
+}
+
+.postAuthor {
+  margin-top: 3rem;
+}
+
+.post {
+}
+
+.image {
+  border: 1px solid green;
+  background-size: 100% auto;
+  height: 22.7rem;
+}

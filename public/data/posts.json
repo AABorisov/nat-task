@@ -3,8 +3,10 @@
     {
       "id": 0,
       "published": true,
-      "title": "",
-      "content": "Failure is simply the opportunity to begin again, this time more intelligently.",
+      "title": {
+        "title": "Failure is simply the opportunity to begin again, this time more intelligently."
+      },
+      "content": "What if a surgeon or patient could train or prepare for a complex procedure by simulating it first in a 360-degree, 3D simulation? What if a patient could put aside the pamphlets and actually see the impact a diet would have on his or her future appearance? What if impaired mobility patients could experience brain- and coordination-building activities in complete safety? Immersive \"digital reality\" tools such as augmented reality (AR) and virtual reality (VR) are making these scenarios increasingly realistic. As with many earlier technology waves, VR and AR got an early boost from frivolous uses and are graduating to more constructive roles. Barriers to technology, cost, and content are beginning to fall, and early adopters are already hard at work.",
       "image": "",
       "author": {
         "name": "Sierra Ferguson",
@@ -15,8 +17,10 @@
     {
       "id": 1,
       "published": true,
-      "title": "We did it!",
-      "content": "",
+      "title": {
+        "title": "We did it!"
+      },
+      "content": "Combining technological innovation, entrepreneurship, and rapid growth, the Fast 500 companies—both large and small, public and private—lead and transform the way we do business today.",
       "image": "/public/assets/Happy-Business-Computer-People-1.png",
       "author": {
         "name": "Lina Lake",
@@ -27,8 +31,10 @@
     {
       "id": 2,
       "published": true,
-      "title": "",
-      "content": "Obstacles are those frightful things you see when you take your eyes off your goal.",
+      "title": {
+        "title": "Obstacles are those frightful things you see when you take your eyes off your goal."
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci aut consectetur consequatur consequuntur cum deleniti dicta dolorum eaque earum excepturi facilis in labore nostrum, nulla odio officia placeat porro praesentium quae quam quod repudiandae tenetur vero vitae voluptate voluptatum. Ad corporis deserunt, eveniet libero nesciunt odit tenetur voluptatibus.",
       "image": "",
       "author": {
         "name": "George Fields",
@@ -39,9 +45,13 @@
     {
       "id": 3,
       "published": true,
-      "title": "60% cases",
-      "content": "completed ahead of schedule",
-      "additionalContent": "21% worse then last week",
+      "title": {
+        "title": "60% cases",
+        "content": "completed ahead of schedule",
+        "additionalContent": "21% worse then last week",
+        "icon": "/public/assets/Group 21.png"
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci aut consectetur consequatur consequuntur cum deleniti dicta dolorum eaque earum excepturi facilis in labore nostrum, nulla odio officia placeat porro praesentium quae quam quod repudiandae tenetur vero vitae voluptate voluptatum. Ad corporis deserunt, eveniet libero nesciunt odit tenetur voluptatibus.",
       "image": "",
       "author": {
         "name": "Glen Moore",
@@ -52,8 +62,10 @@
     {
       "id": 4,
       "published": false,
-      "title": "",
-      "content": "Failure is simply the opportunity to begin again, this time more intelligently.",
+      "title": {
+        "title": "Failure is simply the opportunity to begin again, this time more intelligently."
+      },
+      "content": "What if a surgeon or patient could train or prepare for a complex procedure by simulating it first in a 360-degree, 3D simulation? What if a patient could put aside the pamphlets and actually see the impact a diet would have on his or her future appearance? What if impaired mobility patients could experience brain- and coordination-building activities in complete safety? Immersive \"digital reality\" tools such as augmented reality (AR) and virtual reality (VR) are making these scenarios increasingly realistic. As with many earlier technology waves, VR and AR got an early boost from frivolous uses and are graduating to more constructive roles. Barriers to technology, cost, and content are beginning to fall, and early adopters are already hard at work.",
       "image": "",
       "author": {
         "name": "Sierra Ferguson",
@@ -64,9 +76,11 @@
     {
       "id": 5,
       "published": false,
-      "title": "We did it!",
-      "content": "",
-      "image": "",
+      "title": {
+        "title": "We did it!"
+      },
+      "content": "Combining technological innovation, entrepreneurship, and rapid growth, the Fast 500 companies—both large and small, public and private—lead and transform the way we do business today.",
+      "image": "/public/assets/Happy-Business-Computer-People-1.png",
       "author": {
         "name": "Lina Lake",
         "position": "Head of manager dept.",
@@ -76,8 +90,10 @@
     {
       "id": 6,
       "published": false,
-      "title": "",
-      "content": "Obstacles are those frightful things you see when you take your eyes off your goal.",
+      "title": {
+        "title": "Obstacles are those frightful things you see when you take your eyes off your goal."
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci aut consectetur consequatur consequuntur cum deleniti dicta dolorum eaque earum excepturi facilis in labore nostrum, nulla odio officia placeat porro praesentium quae quam quod repudiandae tenetur vero vitae voluptate voluptatum. Ad corporis deserunt, eveniet libero nesciunt odit tenetur voluptatibus.",
       "image": "",
       "author": {
         "name": "George Fields",
@@ -88,9 +104,13 @@
     {
       "id": 7,
       "published": false,
-      "title": "60% cases",
-      "content": "completed ahead of schedule",
-      "additionalContent": "21% worse then last week",
+      "title": {
+        "title": "60% cases",
+        "content": "completed ahead of schedule",
+        "additionalContent": "21% worse then last week",
+        "icon": "/public/assets/Group 21.png"
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci aut consectetur consequatur consequuntur cum deleniti dicta dolorum eaque earum excepturi facilis in labore nostrum, nulla odio officia placeat porro praesentium quae quam quod repudiandae tenetur vero vitae voluptate voluptatum. Ad corporis deserunt, eveniet libero nesciunt odit tenetur voluptatibus.",
       "image": "",
       "author": {
         "name": "Glen Moore",
@@ -101,8 +121,10 @@
     {
       "id": 8,
       "published": true,
-      "title": "",
-      "content": "Failure is simply the opportunity to begin again, this time more intelligently.",
+      "title": {
+        "title": "Failure is simply the opportunity to begin again, this time more intelligently."
+      },
+      "content": "What if a surgeon or patient could train or prepare for a complex procedure by simulating it first in a 360-degree, 3D simulation? What if a patient could put aside the pamphlets and actually see the impact a diet would have on his or her future appearance? What if impaired mobility patients could experience brain- and coordination-building activities in complete safety? Immersive \"digital reality\" tools such as augmented reality (AR) and virtual reality (VR) are making these scenarios increasingly realistic. As with many earlier technology waves, VR and AR got an early boost from frivolous uses and are graduating to more constructive roles. Barriers to technology, cost, and content are beginning to fall, and early adopters are already hard at work.",
       "image": "",
       "author": {
         "name": "Sierra Ferguson",
@@ -113,9 +135,11 @@
     {
       "id": 9,
       "published": true,
-      "title": "We did it!",
-      "content": "",
-      "image": "",
+      "title": {
+        "title": "We did it!"
+      },
+      "content": "Combining technological innovation, entrepreneurship, and rapid growth, the Fast 500 companies—both large and small, public and private—lead and transform the way we do business today.",
+      "image": "/public/assets/Happy-Business-Computer-People-1.png",
       "author": {
         "name": "Lina Lake",
         "position": "Head of manager dept.",
@@ -125,8 +149,10 @@
     {
       "id": 10,
       "published": true,
-      "title": "",
-      "content": "Obstacles are those frightful things you see when you take your eyes off your goal.",
+      "title": {
+        "title": "Obstacles are those frightful things you see when you take your eyes off your goal."
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci aut consectetur consequatur consequuntur cum deleniti dicta dolorum eaque earum excepturi facilis in labore nostrum, nulla odio officia placeat porro praesentium quae quam quod repudiandae tenetur vero vitae voluptate voluptatum. Ad corporis deserunt, eveniet libero nesciunt odit tenetur voluptatibus.",
       "image": "",
       "author": {
         "name": "George Fields",
@@ -137,9 +163,13 @@
     {
       "id": 11,
       "published": true,
-      "title": "60% cases",
-      "content": "completed ahead of schedule",
-      "additionalContent": "21% worse then last week",
+      "title": {
+        "title": "60% cases",
+        "content": "completed ahead of schedule",
+        "additionalContent": "21% worse then last week",
+        "icon": "/public/assets/Group 21.png"
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium adipisci aut consectetur consequatur consequuntur cum deleniti dicta dolorum eaque earum excepturi facilis in labore nostrum, nulla odio officia placeat porro praesentium quae quam quod repudiandae tenetur vero vitae voluptate voluptatum. Ad corporis deserunt, eveniet libero nesciunt odit tenetur voluptatibus.",
       "image": "",
       "author": {
         "name": "Glen Moore",
